@@ -17,6 +17,8 @@
     <description>spring-boot-study</description>
     <modules>
         <module>spring-boot-quickstart</module>
+        <module>spring-boot-themeleaf</module>
+        <module>spring-boot-logging</module>
     </modules>
 
     <properties>

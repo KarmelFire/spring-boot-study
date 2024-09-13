@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            font-weight: bold;
+            background-color: #e7e7e7;
+        }
+        span {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        /* Add some margin to the last span to separate it from the next list item */
+        li:last-child span:last-child {
+            margin-right: 0;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .input-field {
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Makes sure padding doesn't affect width */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<h1>用户列表</h1>
+<ul>
+    <li class="header">
+        <span>ID</span>
+        <span>用户名</span>
+        <span>电子邮箱</span>
+    </li>
+    <li th:each="user : ${users}">
+        <span th:text="${user.id}"></span>
+        <span th:text="${user.name}"></span>
+        <span th:text="${user.email}"></span>
+    </li>
+</ul>
+<form action="/addUser" method="post">
+    <input type="text" name="name" placeholder="请输入用户名">
+    <input type="text" name="email" placeholder="请输入邮箱">
+    <button type="submit">添加用户</button>
+</form>
+</body>
+</html>
