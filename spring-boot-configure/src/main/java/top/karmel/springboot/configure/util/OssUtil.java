@@ -32,7 +32,7 @@ public class OssUtil {
             String filename = UUID.randomUUID().toString() + "_" + originalFilename;
             InputStream inputStream = file.getInputStream();
             ossClient.putObject(ossConfig.getBucketName(),filename,inputStream);
-            return "https://" + ossConfig.getBucketName() + "," + ossConfig.getEndpoint().replace("https://","") + "/" + filename;
+            return "https://" + ossConfig.getBucketName() + "." + ossConfig.getEndpoint().replace("https://","") + "/" + filename;
         }catch (Exception e){
             throw new RuntimeException("文件上传失败",e);
         }

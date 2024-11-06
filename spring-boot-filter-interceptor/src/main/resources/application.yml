@@ -1,0 +1,12 @@
+logging:
+  level:
+    com.yourpackage: DEBUG  # 仅针对这个包输出调试信息
+    org.springframework: WARN  # Spring 框架的日志保持在警告级别
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-nanjing.aliyuncs.com
+    accessKeyId: LTAI5tANJqt7GrT45cdD8a47
+    accessKeySecret: WTCYWlnv1am9zreh8kBDY3IRJBu3Cu
+    bucketName: karmel
+
